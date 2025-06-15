@@ -1,0 +1,119 @@
+.about-page {
+  padding: 80px 40px;
+  background-color: #f9f9f9;
+  margin-top: 50px;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-hero h1 {
+  font-size: 36px;
+  color: #1e1e2f;
+}
+
+.about-hero p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.about-mission,
+.about-values,
+.about-team,
+.about-cta {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.about-mission h2,
+.about-values h2,
+.about-team h2,
+.about-cta h2 {
+  font-size: 28px;
+  color: #1e1e2f;
+  margin-bottom: 20px;
+}
+
+.about-mission p,
+.about-cta p {
+  font-size: 16px;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-values ul {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.about-values ul li {
+  margin: 10px 0;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 200px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-member h4 {
+  font-size: 18px;
+  color: #1e1e2f;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #666;
+}
+
+.about-cta {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 50px 30px;
+  border-radius: 12px;
+}
+
+.join-btn {
+  background-color: #00d8ff;
+  color: #1e1e2f;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.join-btn:hover {
+  background-color: #00c3e6;
+}

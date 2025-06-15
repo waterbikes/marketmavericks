@@ -16,11 +16,11 @@ const Navbar = () => {
       </div>
 
       <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Book Now</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="services">Services</a></li>
+        <li><a href="About">About</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="Book">Book Now</a></li>
       </ul>
     </nav>
   );
