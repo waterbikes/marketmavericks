@@ -1,7 +1,8 @@
-
-import { connectToDB } from "@/lib/mongodb";
-import User from "@/models/User";
-import bcrypt from "bcryptjs";
+import { NextResponse } from 'next/server';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import { connectToDB } from '@/lib/mongodb';
+import User from '@/models/User';
 
 export async function POST(req) {
   try {
@@ -10,20 +11,33 @@ export async function POST(req) {
 
     const user = await User.findOne({ email });
     if (!user) {
-      return new Response("User not found", { status: 401 });
+      return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
     }
 
-    const isPasswordCorrect = await bcrypt.compare(password, user.password);
-    if (!isPasswordCorrect) {
-      return new Response("Invalid credentials", { status: 401 });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
     }
 
-    return new Response(JSON.stringify({ message: "Login successful", user }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '7d',
     });
 
-  } catch (error) {
-    return new Response("Login error", { status: 500 });
+    // ✅ Correct way to set cookie
+    const response = NextResponse.json({ success: true });
+
+    response.cookies.set('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/',
+    });
+
+    return response;
+
+  } catch (err) {
+    console.error('Login error:', err);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

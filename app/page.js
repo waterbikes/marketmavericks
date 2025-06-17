@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar/page";
 import Image from "next/image";
 import "./home.css";
+import Link from "next/link";
 
 const images = [
   { src: "/electrician.png", alt: "Electrician" },
@@ -28,7 +29,7 @@ export default function Home() {
         <div className="intro-text">
           <h1>Services in 10 mins!! At Your Doorstep</h1>
           <p>Connect to your local service providers quickly and easily.</p>
-          <button className="book-now">Book Now</button>
+          <Link href="/register"><button className="book-now">Book Now</button></Link>
         </div>
         <div className="intro-slider">
           <button className="arrow left" onClick={prevImage}>
@@ -95,7 +96,7 @@ export default function Home() {
         <h2>Need Help Right Now?</h2>
         <p>Book a verified expert and get service at your doorstep within 10 minutes.</p>
         <div className="cta-buttons">
-          <button className="cta-primary">Book a Service</button>
+          <Link href="/register"><button className="cta-primary">Book a Service</button></Link>
           <button className="cta-secondary">Become a Service Partner</button>
         </div>
       </div>
