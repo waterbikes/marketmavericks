@@ -11,12 +11,11 @@ export default function DashboardLayout({ children }) {
   return (
     <div className="dashboard-wrapper">
       <aside className="sidebar">
-        <h2 className="logo">🔧 Services</h2>
+        <h2 className="logo">HelpuIT</h2>
         <nav>
           <ul>
             <li><Link href="/dashboard" className={isActive('/dashboard')}>🏠 Dashboard</Link></li>
             <li><Link href="/dashboard/bookings" className={isActive('/dashboard/bookings')}>📋 My Bookings</Link></li>
-            <li><Link href="/dashboard/book" className={isActive('/dashboard/book')}>🛠️ Book a Service</Link></li>
             <li><Link href="/dashboard/profile" className={isActive('/dashboard/profile')}>👤 Profile</Link></li>
             <li><button onClick={() => {
               document.cookie = 'token=; Max-Age=0'
