@@ -97,7 +97,7 @@ export default function Home() {
         <p>Book a verified expert and get service at your doorstep within 10 minutes.</p>
         <div className="cta-buttons">
           <Link href="/register"><button className="cta-primary">Book a Service</button></Link>
-          <button className="cta-secondary">Become a Service Partner</button>
+          <Link href="/sp-register"><button className="cta-secondary">Become a Service Partner</button></Link>
         </div>
       </div>
 

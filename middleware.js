@@ -1,29 +1,33 @@
 import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
 
-const protectedRoutes = ['/dashboard'];
-
 export async function middleware(request) {
   const token = request.cookies.get('token')?.value;
+  const url = request.nextUrl;
 
-  // Only protect specific routes
-  if (protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route))) {
+  const isCustomerDashboard = url.pathname.startsWith('/dashboard');
+  const isProviderDashboard = url.pathname.startsWith('/provider_dashboard');
+
+  if (isCustomerDashboard || isProviderDashboard) {
     if (!token) {
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.redirect(
+        new URL(isCustomerDashboard ? '/login' : '/sp_login', request.url)
+      );
     }
 
     try {
       await jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET));
       return NextResponse.next();
     } catch (err) {
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.redirect(
+        new URL(isCustomerDashboard ? '/login' : '/sp_login', request.url)
+      );
     }
   }
 
-  // Allow other public routes
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/dashboard'],
+  matcher: ['/dashboard/:path*', '/provider_dashboard/:path*'],
 };

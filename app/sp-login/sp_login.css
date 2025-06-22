@@ -1,0 +1,67 @@
+.sp-login-container {
+  max-width: 400px;
+  margin:10vw auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8.9vw;
+}
+
+.sp-login-container h2 {
+  text-align: center;
+  color: #1e1e2f;
+  margin-bottom: 30px;
+}
+
+.sp-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-login-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+  background-color: #ffffff;
+  color: black;
+}
+
+.sp-login-form input:focus {
+  border-color: #00d8ff;
+}
+
+.sp-login-form button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #00d8ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sp-login-form button:hover {
+  background-color: #00c3e6;
+}
+.login-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+.login-link a {
+  color: #00d8ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

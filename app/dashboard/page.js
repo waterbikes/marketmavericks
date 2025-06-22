@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-import './dashboard.css'
+import Link from 'next/link';
+import './dashboard.css';
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -11,11 +12,10 @@ export default function Dashboard() {
       const data = await res.json();
       setUser(data.user);
     };
-
     fetchUser();
   }, []);
 
-  
+  const services = ['Cleaning', 'Pest Control', 'AC Repair', 'Painting', 'Gardening', 'CCTV Installation'];
 
   return (
     <div className="dashboard">
@@ -26,7 +26,7 @@ export default function Dashboard() {
         </div>
 
         <div className="search-bar">
-          <input type="text" placeholder="services in your area..." />
+          <input type="text" placeholder="Services in your area..." />
           <button>Search</button>
         </div>
       </div>
@@ -43,17 +43,13 @@ export default function Dashboard() {
       <section className="select-service">
         <h2>Select a Service</h2>
         <div className="service-grid">
-          <div className="service-option">Cleaning</div>
-          <div className="service-option">Pest Control</div>
-          <div className="service-option">AC Repair</div>
-          <div className="service-option">Painting</div>
-          <div className="service-option">Gardening</div>
-          <div className="service-option">CCTV Installation</div>
+          {services.map((service) => (
+            <Link key={service} href={`dashboard/book?service=${service.toLowerCase()}`} className="service-option">
+              {service}
+            </Link>
+          ))}
         </div>
       </section>
-
     </div>
-
-
   );
 }
