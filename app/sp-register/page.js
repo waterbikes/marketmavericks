@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import './sp_register.css';
-import Navbar from '../components/Navbar/page';
+
 
 export default function SPRegister() {
   const [form, setForm] = useState({
@@ -52,7 +52,7 @@ export default function SPRegister() {
 
   return (
     <div className="sp-register-container">
-      <Navbar />
+      
       <h2>Service Provider Registration</h2>
       <form onSubmit={handleSubmit} className="sp-register-form">
         <input

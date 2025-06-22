@@ -1,11 +1,11 @@
 import React from 'react';
 import './Contact.css';
-import Navbar from '../components/Navbar/page';
+
 
 const Contact = () => {
   return (
     <div className="contact-page">
-        <Navbar/>
+     
       <section className="contact-hero">
         <h1>Contact Us</h1>
         <p>Have a question or need support? We’re here to help.</p>

@@ -1,132 +1,156 @@
-"use client";
-import { useState } from "react";
-import Navbar from "./components/Navbar/page";
-import Image from "next/image";
-import "./home.css";
-import Link from "next/link";
+'use client';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-const images = [
-  { src: "/electrician.png", alt: "Electrician" },
-  { src: "/plumber.webp", alt: "Plumber" },
-  { src: "/carpenter.webp", alt: "Carpenter" },
-];
+const bgImage = '/herobg.jpg';
 
 export default function Home() {
-  const [current, setCurrent] = useState(0);
+  const [show, setShow] = useState(false);
 
-  const nextImage = () => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
-  };
+  useEffect(() => {
+    setTimeout(() => setShow(true), 300);
+  }, []);
 
   return (
-    <div>
-      <Navbar />
-      <div className="introduction">
-        <div className="intro-text">
-          <h1>Services in 10 mins!! At Your Doorstep</h1>
-          <p>Connect to your local service providers quickly and easily.</p>
-          <Link href="/register"><button className="book-now">Book Now</button></Link>
+    <main className="bg-gray-50 text-gray-800">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+        <Image
+          src={bgImage}
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={show ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 text-center px-4"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+            <span className="text-yellow-400">Service in 10 Minutes</span><br />
+            Right at Your Doorstep
+          </h1>
+          <p className="text-xl max-w-2xl mx-auto drop-shadow-md text-gray-200 mb-6">
+            Connect with reliable, background-verified experts in minutes.
+          </p>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <Link href="/register">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg shadow-md">
+                Book a Service
+              </button>
+            </Link>
+            <Link href="/sp-register">
+              <button className="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
+                Become a Partner
+              </button>
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+
+    
+      {/* Core Services */}
+<section className="py-20 bg-white text-center">
+  <h2 className="text-3xl font-bold mb-12">Our Core Services</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-4">
+    {[
+      ['electrician.png', 'Electrician'],
+      ['plumber.webp', 'Plumber'],
+      ['carpenter.webp', 'Carpenter'],
+      ['cleaner.webp', 'Cleaner'],
+    ].map(([img, title], i) => (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.2 }}
+        viewport={{ once: true }}
+        className="bg-gray-50 hover:bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition flex flex-col items-center"
+      >
+        <div className="w-28 h-28 relative mb-4">
+          <Image
+            src={`/${img}`}
+            alt={title}
+            fill
+            className="object-contain rounded-md"
+          />
         </div>
-        <div className="intro-slider">
-          <button className="arrow left" onClick={prevImage}>
-            &#8592;
+        <h3 className="text-lg font-semibold mt-2">{title}</h3>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
+      {/* Why Choose HelpuiT */}
+      <section className="py-20 bg-indigo-50 text-center">
+        <h2 className="text-3xl font-bold mb-12">Why Choose HelpuiT?</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+          {[
+            ['⏱️', '10-Min Arrival', 'We connect you instantly to a local expert who reaches you in 10 minutes'],
+            ['✅', 'Verified Experts', 'All helpers are vetted and background-checked and trained for safe and quality service.'],
+            ['📍', 'Smart Location', 'Smart location detection to assign the nearest available helper.'],
+            ['💰', 'No Hidden Fees', 'Upfront pricing with no surprises. Pay only for what you book.'],
+          ].map(([icon, title, desc], i) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ rotateY: 5, scale: 1.05 }}
+              className="p-6 bg-white rounded-xl shadow-lg transition-transform transform perspective-1000 cursor-pointer"
+            >
+              <div className="text-4xl mb-4">{icon}</div>
+              <h4 className="text-xl font-semibold mb-2">{title}</h4>
+              <p className="text-sm text-gray-600">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-10">How It Works</h2>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 max-w-5xl mx-auto px-4">
+          {[
+            ['📲', 'Book a Service', 'Choose the service you need'],
+            ['📍', 'We Assign a Helper', 'Nearest available professional is notified'],
+            ['🚪', 'Helper Arrives', 'Help at your doorstep in 10 minutes'],
+          ].map(([icon, title, desc], i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center text-center p-6 bg-indigo-50 rounded-xl shadow hover:shadow-md"
+            >
+              <div className="text-5xl mb-3">{icon}</div>
+              <h4 className="font-semibold mb-1">{title}</h4>
+              <p className="text-sm text-gray-600">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Enhanced CTA */}
+      <section className="py-20 bg-gradient-to-br from-yellow-300 to-yellow-500 text-center text-black">
+        <h2 className="text-4xl font-bold mb-4 drop-shadow-md">Need Help Right Now?</h2>
+        <p className="text-lg mb-8 max-w-2xl mx-auto">
+          Your solution is just a click away. Book a verified professional and get help in under 10 minutes.
+        </p>
+        <Link href="/register">
+          <button className="bg-black text-yellow-400 px-8 py-4 text-lg rounded-xl hover:bg-gray-800 transition shadow-md">
+            Book a Service Now
           </button>
-          <div className="slider-image">
-            <Image
-              src={images[current].src}
-              alt={images[current].alt}
-              width={400}
-              height={250}
-              key={images[current].src}
-            />
-          </div>
-          <button className="arrow right" onClick={nextImage}>
-            &#8594;
-          </button>
-        </div>
-      </div>
-
-      <div className="services">
-        <h2>Our Services</h2>
-        <div className="service-cards">
-          <div className="service-card">
-            <img src="/carpenter.webp" alt="Carpenter" />
-            <p>Carpenter</p>
-          </div>
-          <div className="service-card">
-            <img src="/electrician.png" alt="Electrician" />
-            <p>Electrician</p>
-          </div>
-          <div className="service-card">
-            <img src="/plumber.webp" alt="Plumber" />
-            <p>Plumber</p>
-          </div>
-          <div className="service-card">
-            <img src="/cleaner.webp" alt="Cleaner" />
-            <p>Cleaner</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="how-it-works">
-        <h2>How It Works</h2>
-        <div className="flow-chart">
-          <div className="step">
-            <div className="icon">🛠️</div>
-            <p>Choose a Service</p>
-          </div>
-          <div className="arrow">→</div>
-          <div className="step">
-            <div className="icon">📍</div>
-            <p>Nearby Helper Assigned</p>
-          </div>
-          <div className="arrow">→</div>
-          <div className="step">
-            <div className="icon">🚪</div>
-            <p>Help at Doorstep</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="cta-section">
-        <h2>Need Help Right Now?</h2>
-        <p>Book a verified expert and get service at your doorstep within 10 minutes.</p>
-        <div className="cta-buttons">
-          <Link href="/register"><button className="cta-primary">Book a Service</button></Link>
-          <Link href="/sp-register"><button className="cta-secondary">Become a Service Partner</button></Link>
-        </div>
-      </div>
-
-      <div className="why-choose-us">
-        <h2>Why Choose HelpuiT?</h2>
-        <div className="reasons">
-          <div className="reason-card">
-            <span className="icon">✅</span>
-            <h4>Verified Professionals</h4>
-            <p>Every helper is background-checked and trained for safe and quality service.</p>
-          </div>
-          <div className="reason-card">
-            <span className="icon">⏱️</span>
-            <h4>10-Minute Arrival</h4>
-            <p>We connect you instantly to a local expert who reaches you in 10 minutes.</p>
-          </div>
-          <div className="reason-card">
-            <span className="icon">📍</span>
-            <h4>Location-Based Matching</h4>
-            <p>Smart location detection to assign the nearest available helper.</p>
-          </div>
-          <div className="reason-card">
-            <span className="icon">💰</span>
-            <h4>No Hidden Charges</h4>
-            <p>Upfront pricing with no surprises. Pay only for what you book.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+        </Link>
+      </section>
+    </main>
   );
 }

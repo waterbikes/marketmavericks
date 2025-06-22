@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import './login.css'
 import { useRouter } from 'next/navigation'
-import Navbar from '../components/Navbar/page'
+
 
 export default function login(){
     const [formData, setFormData] = useState({email:'',password:''})
@@ -29,7 +29,7 @@ export default function login(){
 
     return (
         <div className='login-page'>
-            <Navbar/>
+          
             <form onSubmit={handleSubmit} className='login-form'>
                 <h2>Login</h2>
                 <input

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import './register.css';
-import Navbar from "../components/Navbar/page";
+
 
 export default function Register() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -42,7 +42,7 @@ export default function Register() {
 
   return (
     <div className="register-page">
-      <Navbar />
+   
 
       <form onSubmit={handleSubmit} className="register-form">
         <h2>Register</h2>
