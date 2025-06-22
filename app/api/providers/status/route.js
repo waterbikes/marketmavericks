@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { connectToDB } from '@/lib/mongodb';
 import Provider from '@/models/Provider';
-import { getProviderFromToken } from '@/lib/auth'; // Custom util to get provider from JWT
+import { getProviderFromToken } from '@/lib/auth';
 
 export async function POST(req) {
   const { status } = await req.json();
