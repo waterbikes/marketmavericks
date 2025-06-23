@@ -1,5 +1,6 @@
 import React from 'react';
 import './Services.css';
+import Navbar from '../components/Navbar/page';
 
 const servicesList = [
   {
@@ -37,7 +38,7 @@ const servicesList = [
 const Services = () => {
   return (
     <div className="services-page">
-
+       <Navbar /> 
       {/* Hero Section */}
       <section className="services-hero">
   <div className="hero-overlay">
