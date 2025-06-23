@@ -1,119 +1,163 @@
 .about-page {
-  padding: 80px 40px;
-  background-color: #f9f9f9;
-  margin-top: 50px;
-}
-
-.about-hero {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.about-hero h1 {
-  font-size: 36px;
-  color: #1e1e2f;
-}
-
-.about-hero p {
-  font-size: 18px;
-  color: #555;
-  margin-top: 10px;
-}
-
-.about-mission,
-.about-values,
-.about-team,
-.about-cta {
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-.about-mission h2,
-.about-values h2,
-.about-team h2,
-.about-cta h2 {
-  font-size: 28px;
-  color: #1e1e2f;
-  margin-bottom: 20px;
-}
-
-.about-mission p,
-.about-cta p {
-  font-size: 16px;
-  color: #444;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.about-values ul {
-  list-style: none;
-  padding: 0;
-  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
   color: #333;
 }
 
-.about-values ul li {
-  margin: 10px 0;
+/* Hero with background image */
+.about-hero {
+  height: 85vh;
+  background-image: url('/aboutbg.jpg'); /* Replace with your real background image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.team-cards {
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.hero-content-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 700px;
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.about-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.about-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-cta-button {
+  background-color: #ffffff;
+  color: #0072ff;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* General section layout */
+.about-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-section.dark-section {
+  background-color: #f2f7ff;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0072ff;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.section-text.centered {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.values-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 2rem;
+}
+
+.values-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Image and text side-by-side */
+.with-image {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-.team-member {
-  width: 200px;
-  background-color: white;
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-image {
+  flex: 1;
+  max-width: 500px;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.team-member:hover {
-  transform: translateY(-5px);
+.about-content {
+  flex: 1;
+  min-width: 300px;
 }
 
-.team-member img {
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.team-member h4 {
-  font-size: 18px;
-  color: #1e1e2f;
-  margin-bottom: 5px;
-}
-
-.team-member p {
-  font-size: 14px;
-  color: #666;
-}
-
-.about-cta {
-  background-color: #1e1e2f;
+/* CTA card */
+.about-cta-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
   color: white;
-  padding: 50px 30px;
-  border-radius: 12px;
+  margin-top: 4rem;
+  border-radius: 1rem;
 }
 
-.join-btn {
-  background-color: #00d8ff;
-  color: #1e1e2f;
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: bold;
+.about-cta-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-cta-card p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background: white;
+  color: #0072ff;
   border: none;
-  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
   cursor: pointer;
-  margin-top: 20px;
+  transition: background 0.3s;
 }
 
-.join-btn:hover {
-  background-color: #00c3e6;
+.cta-button:hover {
+  background: #e0e0e0;
 }

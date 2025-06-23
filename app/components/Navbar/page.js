@@ -9,8 +9,13 @@ const Navbar = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-yellow-500">
-          HelpuiT
+          <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-yellow-500">
+          <img
+            src="/logo.jpg" // Update this path to your logo file
+            alt="HelpuiT Logo"
+            className="h-8 w-8 object-contain"
+          />
+          <span>HelpuiT</span>
         </Link>
 
         {/* Desktop Links */}

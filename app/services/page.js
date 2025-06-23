@@ -1,7 +1,6 @@
 import React from 'react';
 import './Services.css';
 
-
 const servicesList = [
   {
     title: 'Electrician',
@@ -38,12 +37,21 @@ const servicesList = [
 const Services = () => {
   return (
     <div className="services-page">
-       
-      <section className="services-hero">
-        <h1>Our Services</h1>
-        <p>Skilled helpers at your doorstep in just 10 minutes!</p>
-      </section>
 
+      {/* Hero Section */}
+      <section className="services-hero">
+  <div className="hero-overlay">
+    <div className="hero-card">
+      <h1 className="hero-title">Our Services</h1>
+      <p className="hero-subtitle">
+        Need a fix fast? From electricians to deep cleaners, HelpuiT delivers skilled professionals to your door in just 10 minutes.
+      </p>
+      <button className="hero-btn">See All Services</button>
+    </div>
+  </div>
+</section>
+
+      {/* Services Grid */}
       <section className="services-grid">
         {servicesList.map((service, index) => (
           <div className="service-box" key={index}>
@@ -54,21 +62,25 @@ const Services = () => {
         ))}
       </section>
 
+      {/* Why HelpuiT */}
       <section className="services-benefits">
         <h2>Why Choose HelpuiT?</h2>
         <ul>
-          <li>✔ Your Own local Service Providers</li>
-          <li>✔ Arrive in 10 Minutes</li>
-          <li>✔ Transparent Pricing</li>
-          <li>✔ 24x7 Availability</li>
-          <li>✔ Trusted by 10,000+ Homes</li>
+          <li>✔ Local Experts in Every Area</li>
+          <li>✔ Arrival Within 10 Minutes</li>
+          <li>✔ Transparent Pricing & No Hidden Fees</li>
+          <li>✔ 24/7 Service Support</li>
+          <li>✔ Trusted by 10,000+ Happy Customers</li>
         </ul>
       </section>
 
+      {/* CTA */}
       <section className="services-cta">
-        <h2>Need urgent help?</h2>
-        <p>Book a service provider now and get your issue fixed in no time.</p>
-        <button className="book-btn">Book Now</button>
+        <div className="cta-content">
+          <h2>Need Help Fast?</h2>
+          <p>Book your trusted helper now and get instant assistance.</p>
+          <button className="book-btn">Book Now</button>
+        </div>
       </section>
     </div>
   );
