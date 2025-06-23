@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className="md:hidden bg-white px-6 pb-4 space-y-4 text-sm font-medium text-gray-700">
           <Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-yellow-500">Home</Link>
           <Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-blue-500">Services</Link>
-          <Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-blue-500">About</Link>
+          <Link href="/About" onClick={() => setIsOpen(false)} className="block hover:text-blue-500">About</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="block hover:text-blue-500">Contact</Link>
           <Link href="/register" onClick={() => setIsOpen(false)}>
             <button className="w-full bg-blue-400 hover:bg-sky-400 text-black font-semibold px-4 py-2 rounded-lg shadow transition">
