@@ -1,10 +1,11 @@
 import React from 'react';
 import './About.css';
+import Navbar from "../components/Navbar/page";
 
 const About = () => {
   return (
     <div className="about-page">
-
+        <Navbar />
       {/* Hero Section with Left-Aligned Title */}
       <section className="about-hero">
   <div className="hero-overlay">
