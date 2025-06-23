@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Navbar from "./components/Navbar/page";
 
 const bgImage = '/herobg.jpg';
 
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <main className="bg-gray-50 text-gray-800">
+     <Navbar /> 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
         <Image
