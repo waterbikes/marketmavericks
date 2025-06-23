@@ -42,7 +42,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link href="/register">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg shadow-md transition-transform hover:scale-105">
+              <button className="bg-blue-400 hover:bg-sky-400 text-black font-semibold px-6 py-3 rounded-lg shadow-md transition-transform hover:scale-105">
                 Book a Service
               </button>
             </Link>
