@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import './book.css';
 
-export default function BookService() {
+export default function BookService({ params }) {
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
-
+  
   const handleSubmit = async () => {
+    const { service } = await params;
     setLoading(true);
     try {
       const res = await fetch('/api/service-request', {
@@ -16,7 +17,7 @@ export default function BookService() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          service: 'cleaning',
+          service: decodeURIComponent(service),
           description,
         }),
       });
@@ -32,7 +33,7 @@ export default function BookService() {
 
   return (
     <div className="book-process">
-      <h2>Describe Your Issue</h2>
+      <h2>Describe Your Issue:</h2>
       <textarea
         placeholder="Describe your issue in 50 words..."
         value={description}

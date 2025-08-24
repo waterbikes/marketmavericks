@@ -34,9 +34,9 @@ export default function Dashboard() {
       <section className="popular-services">
         <h2>Popular Services</h2>
         <div className="services-list">
-          <div className="service-card">Plumber</div>
-          <div className="service-card">Carpenter</div>
-          <div className="service-card">Electrician</div>
+          <Link href= "dashboard/book/plumber" className="service-card">Plumber</Link>
+          <Link href= "dashboard/book/carpenter" className="service-card">Carpenter</Link>
+          <Link href= "dashboard/book/electrician" className="service-card">Electrician</Link>
         </div>
       </section>
 
@@ -44,7 +44,7 @@ export default function Dashboard() {
         <h2>Select a Service</h2>
         <div className="service-grid">
           {services.map((service) => (
-            <Link key={service} href={`dashboard/book?service=${service.toLowerCase()}`} className="service-option">
+            <Link key={service} href={`dashboard/book/${service.toLowerCase()}`} className="service-option">
               {service}
             </Link>
           ))}

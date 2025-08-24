@@ -31,7 +31,7 @@ export async function POST(req) {
             type: 'Point',
             coordinates: [userLocation.lng, userLocation.lat],
           },
-          $maxDistance: 5000, // within 5 km
+          $maxDistance: 50000000, // within 5 km
         },
       },
     });
