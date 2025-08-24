@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
   return (
     <div className="dashboard-wrapper">
       <aside className="sidebar">
-        <h2 className="logo">HelpuIT</h2>
+        <h2 className="logo">MarketMavericks</h2>
         <nav>
           <ul>
             <li><Link href="/dashboard" className={isActive('/dashboard')}>🏠 Dashboard</Link></li>

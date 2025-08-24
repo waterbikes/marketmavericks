@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Logo + Tagline */}
         <div>
-          <h3 className="text-2xl font-bold text-yellow-400 mb-2">HelpuiT</h3>
+          <h3 className="text-2xl font-bold text-yellow-400 mb-2">MarketMavericks</h3>
           <p className="text-sm text-gray-400">
             Fast, trusted home services within 10 minutes. We're here when you need us.
           </p>
@@ -51,9 +51,9 @@ const Footer = () => {
       </div>
 
         <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} HelpuiT. All rights reserved.
+        © {new Date().getFullYear()} MarketMavericks. All rights reserved.
           <p className="mt-2">
-            Made with 💗 by HelpuiT </p>
+            Made with 💗 by MarketMavericks </p>
       </div>
     </footer>
   );

@@ -94,7 +94,7 @@ export default function Home() {
 
       {/* Why Choose HelpuiT */}
       <section className="py-20 bg-indigo-50 text-center">
-        <h2 className="text-3xl font-bold mb-12">Why Choose HelpuiT?</h2>
+        <h2 className="text-3xl font-bold mb-12">Why Choose MarketMavericks?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
           {[
             ['⏱️', '10-Min Arrival', 'We connect you instantly to a local expert who reaches you in 10 minutes'],

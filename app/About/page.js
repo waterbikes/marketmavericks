@@ -10,7 +10,7 @@ const About = () => {
       <section className="about-hero">
   <div className="hero-overlay">
     <div className="hero-content-card">
-      <h1 className="about-title">About HelpuiT</h1>
+      <h1 className="about-title">About MarketMavericks</h1>
       <p className="about-subtitle">
         India’s fastest on-demand home service platform. Trusted professionals, delivered at your doorstep — within 10 minutes.
       </p>
@@ -24,7 +24,7 @@ const About = () => {
         <div className="about-content">
           <h2 className="section-heading">Our Mission</h2>
           <p className="section-text">
-            Our mission at <strong>HelpuiT</strong> is to empower every household with immediate access to professional services. We believe urgent home needs like plumbing, electrical work, or carpentry shouldn't involve delays or stress.
+            Our mission at <strong>MarketMavericks</strong> is to empower every household with immediate access to professional services. We believe urgent home needs like plumbing, electrical work, or carpentry shouldn't involve delays or stress.
           </p>
         </div>
         <img src="/images/mission.jpg" alt="Our mission" className="section-image" />
@@ -34,7 +34,7 @@ const About = () => {
       <section className="about-section dark-section">
         <h2 className="section-heading">Our Vision</h2>
         <p className="section-text centered">
-          We envision a connected India where every locality — metro or rural — can get professional help within 10 minutes. By blending smart logistics with human talent, HelpuiT aims to transform how home services are accessed.
+          We envision a connected India where every locality — metro or rural — can get professional help within 10 minutes. By blending smart logistics with human talent, MarketMavericks aims to transform how home services are accessed.
         </p>
       </section>
 
@@ -55,7 +55,7 @@ const About = () => {
         <div className="about-content">
           <h2 className="section-heading">Meet the Team</h2>
           <p className="section-text">
-            Behind HelpuiT is a passionate team of engineers, designers, and field partners dedicated to making service delivery seamless. We’re building India’s first truly instant service ecosystem — one home at a time.
+            Behind MarketMavericks is a passionate team of engineers, designers, and field partners dedicated to making service delivery seamless. We’re building India’s first truly instant service ecosystem — one home at a time.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ const About = () => {
       {/* CTA */}
       <section className="about-cta-card">
         <h2>Be Part of the Help Revolution</h2>
-        <p>Whether you’re a homeowner looking for quick solutions or a skilled professional wanting to serve — HelpuiT is your platform.</p>
+        <p>Whether you’re a homeowner looking for quick solutions or a skilled professional wanting to serve — MarketMavericks is your platform.</p>
         <button className="cta-button">Explore Opportunities</button>
       </section>
     </div>

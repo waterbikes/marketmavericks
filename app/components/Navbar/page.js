@@ -12,10 +12,10 @@ const Navbar = () => {
           <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-blue-600">
           <img
             src="/logo.jpg" // Update this path to your logo file
-            alt="HelpuiT Logo"
+            alt="MarketMavericks Logo"
             className="h-8 w-8 object-contain"
           />
-          <span>HelpuiT</span>
+          <span>MarketMavericks</span>
         </Link>
 
         {/* Desktop Links */}

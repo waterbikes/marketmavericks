@@ -45,7 +45,7 @@ const Services = () => {
     <div className="hero-card">
       <h1 className="hero-title">Our Services</h1>
       <p className="hero-subtitle">
-        Need a fix fast? From electricians to deep cleaners, HelpuiT delivers skilled professionals to your door in just 10 minutes.
+        Need a fix fast? From electricians to deep cleaners, MarketMavericks delivers skilled professionals to your door in just 10 minutes.
       </p>
       <button className="hero-btn">See All Services</button>
     </div>
@@ -65,7 +65,7 @@ const Services = () => {
 
       {/* Why HelpuiT */}
       <section className="services-benefits">
-        <h2>Why Choose HelpuiT?</h2>
+        <h2>Why Choose MarketMavericks?</h2>
         <ul>
           <li>✔ Local Experts in Every Area</li>
           <li>✔ Arrival Within 10 Minutes</li>

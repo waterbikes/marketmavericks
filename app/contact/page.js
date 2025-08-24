@@ -27,7 +27,7 @@ const Contact = () => {
           <h2>Get in Touch</h2>
           <p>📍 Delhi, India</p>
           <p>📞 +91 9876543210</p>
-          <p>📧 support@helpuit.in</p>
+          <p>📧 support@MarketMavericks.in</p>
           <p>⏰ Mon - Sun: 8:00 AM - 10:00 PM</p>
         </div>
       </section>

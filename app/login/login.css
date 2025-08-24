@@ -11,10 +11,8 @@
   background-color: white;
   padding: 30px;
   border-radius: 10px;
-  width: 300px;
+  width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  height: 30vw;
-  width: 30vw;
 }
 
 .login-form h2 {
